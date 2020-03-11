@@ -1,0 +1,19 @@
+{
+  "name": "express-react",
+  "version": "1.0.0",
+  "description": "BoilerPlate for React with Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Mitch D. Lincoln",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
