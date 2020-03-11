@@ -1,0 +1,1 @@
+Questo è un file di eltture e vorrei sapere dove cazzo e salvato!
