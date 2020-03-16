@@ -3,7 +3,6 @@ const router = express.Router();
 
 const members = require("../../members");
 
-
 // Get all Members
 router.get("/", (req, res) => res.json(members));
 
@@ -17,5 +16,12 @@ router.get("/:id", (req, res) => {
     res.status(400).json({ msg: "Member Nonexistent" });
   }
 });
+
+// Create Member
+router.post('/', (req, res) => {
+    const newMember = {
+
+    }
+})
 
 module.exports = router;
