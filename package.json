@@ -4,7 +4,8 @@
   "description": "Ehy, Ehy, Ehy!\r Learning how to use Git and make a functional, but very basic, Express Server.\r Cheers!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node  index",
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",
