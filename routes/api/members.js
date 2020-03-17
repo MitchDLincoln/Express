@@ -28,11 +28,30 @@ router.post("/", (req, res) => {
   };
 
   if (!newMember.name || !newMember.email) {
-    return res.status(400).json({ msg: "Please include a name and email" }); 
+    return res.status(400).json({ msg: "Please include a name and email" });
   }
 
   members.push(newMember);
   res.json(members);
+});
+
+// Update Member
+router.put("/:id", (req, res) => {
+  const found = members.some(member => member.id === parseInt(req.params.id));
+
+  if (found) {
+    const uptMember = req.body;
+    members.forEach(member => {
+      if (member.id === parseInt(req.params.id)) {
+        member.name = uptMember.name ? uptMember.name : member.name;
+        member.email = uptMember.email ? uptMember.email : member.email;
+
+        res.json({ msg: "Member Updated", member });
+      }
+    });
+  } else {
+    res.status(400).json({ msg: "Member Nonexistent" });
+  }
 });
 
 module.exports = router;
