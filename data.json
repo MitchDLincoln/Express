@@ -1,0 +1,28 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@gmail.com",
+      "age": 24
+    },
+    {
+      "id": "2",
+      "name": "Antohine Grizman",
+      "email": "antohinegrizu@gmail.com",
+      "age": 27
+    },
+    {
+      "id": "3",
+      "name": "Mitch D. Lincoln",
+      "email": "catalin491@gmail.com",
+      "age": 24
+    },
+    {
+      "id": "4",
+      "name": "Charles Leclerc",
+      "email": "charlesl@gmail.com",
+      "age": 23
+    }
+]
+}
