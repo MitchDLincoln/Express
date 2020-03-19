@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <div className="container d-flex flex-column justify-content-center">
+        <div className="container d-flex flex-column justify-content-center text-center">
           <img src={logo} alt="SpaceX" className="rounded mx-auto d-block" />
           <Launches />
         </div>
