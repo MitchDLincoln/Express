@@ -10,27 +10,32 @@ export default function launchItem({
     launch_success
   }
 }) {
-    if(launch_success){
-        return (
-            <div className="card text-white bg-success mb-3">
-              <div class="card-header">Flight Number: {flight_number}</div>
-              <div className="card-body">
-                <h4 className="card-title">Mission: {mission_name} </h4>
-                <p>Year: {launch_year} </p>
-                <p>{launch_date_local}</p>
-              </div>
-            </div>
-        );
-    } else {
-            return (
-                <div className="card text-white bg-danger mb-3">
-                  <div class="card-header">Flight Number: {flight_number}</div>
-                  <div className="card-body">
-                    <h4 className="card-title">Mission: {mission_name} </h4>
-                    <p>Year: {launch_year} </p>
-                    <p>{launch_date_local}</p>
-                  </div>
-                </div>
-            );
-    }
+  if (launch_success) {
+    return (
+      <div className="card text-white bg-success mb-3">
+        <div class="card-header">Flight Number: {flight_number}</div>
+        <div className="card-body">
+          <h4 className="card-title">Mission: {mission_name} </h4>
+          <p>Year: {launch_year} </p>
+          <p>{launch_date_local}</p>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="card text-white bg-danger mb-3">
+        <div class="card-header">Flight Number: {flight_number}</div>
+        <div className="card-body d-flex flex-row justify-content-around align-items-center">
+          <div>
+            <h4 className="card-title">Mission: {mission_name} </h4>
+            <p>Year: {launch_year} </p>
+            <p>{launch_date_local}</p>
+          </div>
+          <div>
+            <button className="btn btn-secondary align-self-center">Launch Details</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
