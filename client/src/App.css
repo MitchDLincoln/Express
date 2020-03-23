@@ -1,3 +1,9 @@
 .cardWidth {
   max-width: 20rem;
 }
+
+.legend {
+  position: fixed;
+  bottom: 50vh;
+  left: 1vw;
+}

@@ -1,4 +1,6 @@
 import React from "react";
+import moment from 'react-moment'
+// import classNames from "classnames";
 import "../App.css";
 
 export default function launchItem({
@@ -13,9 +15,16 @@ export default function launchItem({
   if (launch_success) {
     return (
       <div className="card text-white bg-success mb-3">
-        <div class="card-header">Flight Number: {flight_number}</div>
+        <div className="card-header">Flight Number: {flight_number}</div>
         <div className="card-body">
-          <h4 className="card-title">Mission: {mission_name} </h4>
+          <h4
+            className="card-title"
+            // className={classNames({
+            //   "bg-danger": launch_success,
+            // })}
+          >
+            Mission: {mission_name}{" "}
+          </h4>
           <p>Year: {launch_year} </p>
           <p>{launch_date_local}</p>
         </div>
@@ -32,7 +41,9 @@ export default function launchItem({
             <p>{launch_date_local}</p>
           </div>
           <div>
-            <button className="btn btn-secondary align-self-center">Launch Details</button>
+            <button className="btn btn-secondary align-self-center">
+              Launch Details
+            </button>
           </div>
         </div>
       </div>
