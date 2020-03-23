@@ -1,8 +1,10 @@
 import React from "react";
 import Moment from "react-moment";
+import { Link } from "react-router-dom";
 // import classNames from "classnames";
-import "../App.css";
 
+//Stile
+import "../App.css";
 
 export default function launchItem({
   launch: {
@@ -46,9 +48,12 @@ export default function launchItem({
             </p>
           </div>
           <div>
-            <button className="btn btn-secondary align-self-center">
+            <Link
+              to={`/launch/${flight_number}`}
+              className="btn btn-secondary align-self-center"
+            >
               Launch Details
-            </button>
+            </Link>
           </div>
         </div>
       </div>
