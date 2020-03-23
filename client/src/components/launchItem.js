@@ -1,7 +1,8 @@
 import React from "react";
-import moment from 'react-moment'
+import Moment from "react-moment";
 // import classNames from "classnames";
 import "../App.css";
+
 
 export default function launchItem({
   launch: {
@@ -26,7 +27,9 @@ export default function launchItem({
             Mission: {mission_name}{" "}
           </h4>
           <p>Year: {launch_year} </p>
-          <p>{launch_date_local}</p>
+          <p>
+            <Moment format="HH:mm YYYY/MM/DD">{launch_date_local}</Moment>
+          </p>
         </div>
       </div>
     );
@@ -38,7 +41,9 @@ export default function launchItem({
           <div>
             <h4 className="card-title">Mission: {mission_name} </h4>
             <p>Year: {launch_year} </p>
-            <p>{launch_date_local}</p>
+            <p>
+              <Moment format="HH:mm YYYY/MM/DD">{launch_date_local}</Moment>
+            </p>
           </div>
           <div>
             <button className="btn btn-secondary align-self-center">
