@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#gameScreen {
+    margin-top: 2rem;
+    border: 1px solid black;
+    width: 80vw;
+    height: 60vh;
+}
