@@ -53,8 +53,6 @@ class Paddle {
   //Aggiorno la posizione del paddle
   update(deltaTime) {
     const rightLimit = this.gameWidth - this.width;
-    // Nel caso delta time = 0 si torna a casa
-    if (!deltaTime) return;
 
     this.position.x += this.speed;
 
@@ -116,6 +114,60 @@ class InputHendler {
 
 // fine classe INPUTHANDLER
 
+// classe Ball
+class Ball {
+  constructor(gameWidth, gameHeight) {
+    this.image = document.getElementById("img-ball");
+    this.gameWidth = gameWidth;
+    this.gameHeight = gameHeight;
+    this.position = {
+      x: 20,
+      y: 50,
+    };
+    this.speed = {
+      x: 2,
+      y: 2,
+    };
+    this.size = 16;
+  }
+
+  draw(ctx) {
+    ctx.drawImage(
+      this.image,
+      this.position.x,
+      this.position.y,
+      this.size,
+      this.size
+    );
+  }
+
+  update(deltaTime) {
+    const limitWide = this.gameWidth - this.size;
+    const limitHeigh = this.gameHeight - this.size;
+
+    this.position.x += this.speed.x;
+    this.position.y += this.speed.y;
+
+    if (this.position.x > limitWide || this.position.x < 0) this.speed.x *= -1;
+    if (this.position.y > limitHeigh || this.position.y < 0) this.speed.y *= -1;
+  }
+}
+
+// fine classe BALL
+
+// classe Brick
+class Brick {
+  constructor() {
+    this.image = document.getElementById("img-brick");
+  }
+
+  draw(ctx) {
+    ctx.drawImage(this.image, 100, 10, 32, 16);
+  }
+}
+
+// fine classe BRICK
+
 // MAIN
 
 // Utilizzo la classe paddle
@@ -124,11 +176,17 @@ let paddle = new Paddle(GAME_WIDTH, GAME_HEIGHT);
 // Creo un input reader
 new InputHendler(paddle);
 
+let ball = new Ball(GAME_WIDTH, GAME_HEIGHT);
+let brick = new Brick();
+
 // Disegno il paddle
 paddle.draw(ctx);
 
 // Tempo
 let lastTime = 0;
+
+// Immagini
+let imgBrick = document.getElementById("img-brick");
 
 // Meccanica di gioco
 function gameLoop(timestamp) {
@@ -139,13 +197,19 @@ function gameLoop(timestamp) {
   // Pulisce il rettangolo ad ogni frame
   ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 
+  // Paddle
   paddle.update(deltaTime);
-
   paddle.draw(ctx);
+
+  // Ball
+  ball.update(deltaTime);
+  ball.draw(ctx);
+
+  brick.draw(ctx);
 
   // Richiedo animazione dal Browser
   requestAnimationFrame(gameLoop);
 }
 
 // Gioco
-gameLoop();
+requestAnimationFrame(gameLoop);
