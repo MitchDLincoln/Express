@@ -5,6 +5,10 @@ body {
     justify-content: center;
 }
 
+img {
+    display: none;
+}
+
 #gameScreen {
     margin-top: 2rem;
     border: 1px solid black;
