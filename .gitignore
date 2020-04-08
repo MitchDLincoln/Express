@@ -1,1 +1,5 @@
 node_modules
+
+# Temporanei
+src/paddle.js
+src/input.js
