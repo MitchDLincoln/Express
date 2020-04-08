@@ -3,3 +3,5 @@ node_modules
 # Temporanei
 src/paddle.js
 src/input.js
+src/ball.js
+src/brick.js
