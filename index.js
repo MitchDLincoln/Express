@@ -8,7 +8,7 @@ const app = express();
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
-app.get("/", (req, res) => res.render("home"));
+app.get("/", (req, res) => res.render("home", {Title : "Brick Crasher"}));
 
 // Porta in Ascolto
 const PORT = process.env.PORT || 3500;
